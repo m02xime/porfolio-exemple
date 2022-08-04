@@ -1,29 +1,257 @@
 @import 'scss/reset';
 @import 'scss/base';
 
-body {
-  padding: 32px;
+@font-face {
+  font-family: 'NFTvibe';
+  src:
+    url('../assets/NFTvibe.ttf') format('truetype')
 }
 
-.hero {
-  height: 100%;
-  background: antiquewhite;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-
-  h1 {
-    font-size: calc(54vw * 100 / 1440);
-    margin-bottom: calc(12vw * 100 / 1440);
-  }
-
-  p {
-    font-size: calc(24vw * 100 / 1440);
-  }
+body {
+  font-size: 20px;
+  font-family: "NFTvibe", serif;
+  background-color: #DFF1FF;
+  color: #1F194D;
+  font-weight: bold;
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+
+header {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30px ;
+  margin-top: 30px ;
+  margin-bottom: 100px;
+
+  .logo {
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+      height: 70px;
+
+    }
+
+    img:hover {
+      animation: rotate 1s ease;
+    }
+
+    a:nth-child(2n) {
+      transition: .4s;
+    }
+
+    a:nth-child(2n):hover {
+      color: #36BFC1;
+    }
+
+  }
+
+
+  .route {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+
+    a {
+      position: relative;
+      background-image: linear-gradient(to right,
+          #36BFC1,
+          #36BFC1 50%,
+          #1F194D 50%);
+      background-size: 200% 100%;
+      background-position: -100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all .4s ease-in-out;
+    }
+
+    a:before {
+      content: '';
+      background: repeating-linear-gradient(-45deg, #1F194D, #36BFC1, #DFF1FF);
+      background-size: 400% 400%;
+      display: block;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform .4s ease-in-out;
+      animation: rainbow 3s linear infinite;
+    }
+
+    a:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+
+    a:hover {
+      background-position: 0;
+      color: #36BFC1;
+      transition: .4s;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+
+    .cube {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      padding-bottom: 20px;
+      background-color: #ffffff;
+      border-top-left-radius: 5%;
+      border-top-right-radius: 5%;
+      margin: 10px;
+      height: 50vh;
+      width: 50%;
+
+      .me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5%;
+        width: 100%;
+        height: 80%;
+        background: repeating-linear-gradient(-45deg, #1F194D, #36BFC1, #DFF1FF);
+        background-size: 400% 400%;
+        animation: rainbow 10s ease infinite;
+        img{
+          width: 70%;
+          height: 70%;
+        }
+      }
+
+      .description {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+      }
+    }
+  }
+
+  .review {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 20px;
+
+    h1 {
+      margin-bottom: 50px;
+    }
+
+    p {
+      width: 50%;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .btn-review {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 50%;
+    }
+  }
+}
+
+
+.btn-dark {
+  background-color: #36BFC1;
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: #DFF1FF;
+  font-weight: normal;
+  transition: .2s;
+}
+
+.btn-light {
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: #36BFC1 1px solid;
+  color: #36BFC1;
+  font-weight: normal;
+  transition: .2s;
+}
+
+.btn-dark:hover {
+  border: #36BFC1 1px solid;
+  background-color: transparent;
+  color: #36BFC1;
+}
+
+.btn-light:hover {
+  background-color: #36BFC1;
+  color: #DFF1FF;
+}
+
+
+
+.slash {
+  width: 200vw;
+  height: 200vw;
+  background-color: #ffffff;
+  position: absolute;
+  top: 60%;
+  left: 0;
+  transform: rotate(-10deg);
+  z-index: -1;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 25%;
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(90deg);
+  }
+
+  10% {
+    transform: rotateY(180deg);
+  }
 }

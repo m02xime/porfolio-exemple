@@ -1,8 +1,9 @@
 <html>
+
 <head>
-    <title>Parcel Sandbox</title>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="src/styles.scss"/>
+    <title>portfolio</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="src/styles.scss" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <!-- Canonical -->
     <link rel="canonical" href="https://www.example.com">
@@ -13,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
     <meta name="format-detection" content="telephone=no">
     <!-- Title -->
-    <title>Benjamin Code Scalpel</title>
+    <title>Maxime kock Bouabid</title>
     <!-- Description -->
     <meta name="description" content="Home description.">
     <!-- Social -->
@@ -34,21 +35,47 @@
     <meta name="theme-color" content="#fff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <header>
+        <nav>
+            <div class="logo"><a href=""><img src="./assets/logo.png" alt="logo"></a> <a href="">Home</a></div>
 
-<div class="hero">
-    <h1>Quick Parcel Project by Benjamin Code</h1>
-    <p class="description">
-        This is Benjamin Code's <a href="https://github.com/bdebon/quick-parcel-project" target="_blank">quick starter project</a> running on Parcel.js v1 to maximise compatibilities with codesandbox.
-    </p>
+            <ul class="route">
+                <li><a href="">about me</a></li>
+                <li><a href="">my projects</a></li>
+                <li><a href="">contact me</a></li>
+            </ul>
 
-</div>
+        </nav>
+        <div class="hero">
+            <div class="avatar">
+                <div class="cube">
+                    <div class="me" id="me">
+                        <img src="./assets/myroom.png" alt="room">
+                    </div>
+                    <div class="description">
+                        <p>Maxime Kock--Bouabid</p>
+                        <p>Back-end Developer</p>
+                    </div>
+                </div>
 
-
-<script type="module" src="src/index.ts"></script>
-
+            </div>
+            <div class="review">
+                <h1>what I do ?</h1>
+                <p>I work in particular for internal applications for companies, I seek to improve myself in front and
+                    in my free time I explore all kinds of projects in python, in particular AI.</p>
+                <div class="btn-review">
+                    <a href="" class="btn-dark">more about me<span></span></a>
+                    <a href="" class="btn-light">my work<span></span></a>
+                </div>
+            </div>
+        </div>
+        <div class="slash"></div>
+    </header>
+    <script src="./src/js/main.js"></script>
 </body>
 </html>
